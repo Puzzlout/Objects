@@ -3,9 +3,9 @@
  * You must change the following values according to your case.
  */
 define("VENDOR", "Puzzlout");
-define("PACKAGE", "ScalarObjects");
-$soureNamespacePrefix = VENDOR . "\\ScalarObjects\\";
-$testNamespacePrefix = VENDOR . "\\ScalarObjects\\Tests";
+define("PACKAGE", "Objects");
+$soureNamespacePrefix = VENDOR . "\\Objects\\";
+$testNamespacePrefix = VENDOR . "\\Objects\\Tests";
 
 /**
  * NO MODIFICATION ZONE (except if you take responsibility of your actions)

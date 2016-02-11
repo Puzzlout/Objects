@@ -1,12 +1,12 @@
 {
-    "name": "puzzlout/framework-mvc",
-    "description": "The Puzzleout framework to be used to build MVC websites",
+    "name": "puzzlout/objects",
+    "description": "The Puzzleout Objects provides the core objects.",
     "license": "MIT",
-    "keywords": ["Puzzlout", "web", "dev", "jl", "easymvc"],
+    "keywords": ["Puzzlout", "web", "dev", "jl", "objects", "core"],
     "authors": [
         {
             "name": "Jeremie Litzler",
-            "email": "contact@jeremielitzler.net"
+            "email": "puzzlout@jeremielitzler.net"
         }
     ],
     "version": "1.0.0-alpha.1",
@@ -14,11 +14,12 @@
         "php": ">=5.4.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.8.*"
+        "phpunit/phpunit": "4.8.*",
+        "puzzlout/framework-mvc": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "Puzzlout\\Framework\\": "src"
+            "Puzzlout\\Objects\\": "src"
         }
     }
 }
