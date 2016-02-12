@@ -6,27 +6,24 @@
  * @author Jeremie Litzler
  * @copyright Copyright (c) 2015
  * @licence http://opensource.org/licenses/gpl-license.php GNU Public License
- * @link https://github.com/WebDevJL/EasyMvc
+ * @link https://github.com/Puzzlout/Objects
  * @since Version 1.0.0
- * @package BaseClassGenerator
+ * @package String
  * @see http://php.net/manual/en/language.types.intro.php
  */
 
 namespace ScalarType;
 
-use \Library\Interfaces;
+use Puzzlout\Objects\Interfaces;
 
-if (!defined('__EXECUTION_ACCESS_RESTRICTION__'))
-  exit('No direct script access allowed');
-
-class String extends ObjectBase implements Interfaces\IObjectInitialization, Interfaces\IObject, Interfaces\IString {
+class String extends Object implements IObjectInitialization, IObject, IString {
 
   public $value;
 
   /**
    * Create a String object with an empty scarlar string
    * 
-   * @return \ScalarType\String
+   * @return \Puzzlout\Objects\String
    */
   public static function Init() {
     $instance = new String();
@@ -38,7 +35,7 @@ class String extends ObjectBase implements Interfaces\IObjectInitialization, Int
    * Create a String object and assign the $value parameter to the instance scarlar string
    * 
    * @param string $value
-   * @return \ScalarType\String
+   * @return \Puzzlout\Objects\String
    * @throws \Exception
    */
   public static function InitWith($value) {
