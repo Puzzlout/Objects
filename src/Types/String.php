@@ -12,7 +12,7 @@
  * @see http://php.net/manual/en/language.types.intro.php
  */
 
-namespace ScalarType;
+namespace Puzzlout\Objects\Types;
 
 use Puzzlout\Objects\Interfaces\IObjectInitialization;
 use Puzzlout\Objects\Interfaces\IObject;
