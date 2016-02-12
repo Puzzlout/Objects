@@ -14,7 +14,9 @@
 
 namespace ScalarType;
 
-use Puzzlout\Objects\Interfaces;
+use Puzzlout\Objects\Interfaces\IObjectInitialization;
+use Puzzlout\Objects\Interfaces\IObject;
+use Puzzlout\Objects\Interfaces\IString;
 
 class String extends Object implements IObjectInitialization, IObject, IString {
 

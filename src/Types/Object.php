@@ -14,8 +14,8 @@
 
 namespace Puzzlout\Objects\Types;
 
-use Puzzlout\Interfaces\IObject;
-use Puzzlout\Interfaces\IString;
+use Puzzlout\Objects\Interfaces\IObject;
+use Puzzlout\Objects\Interfaces\IString;
 
 class Object implements IObject, IString {
   protected $value;
