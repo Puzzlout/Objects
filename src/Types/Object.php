@@ -20,7 +20,7 @@ use Puzzlout\Objects\Interfaces\IString;
 class Object implements IObject, IString {
   protected $value;
 
-  abstract public function IsValid();
+  abstract public function IsValid($value);
   /**
    * 
    * @return string The type of the instance.
