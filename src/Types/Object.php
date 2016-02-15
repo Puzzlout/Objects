@@ -14,7 +14,6 @@
 
 namespace Puzzlout\Objects\Types;
 
-use Puzzlout\Objects\Interfaces\IObjectInitialization;
 use Puzzlout\Objects\Interfaces\IObject;
 use Puzzlout\Objects\Interfaces\IString;
 
