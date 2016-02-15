@@ -49,7 +49,7 @@ class StringTest extends \PHPUnit_Framework_TestCase {
     
     public function testToStringMethodReturnEmptyValue() {
         $result = new String();
-        $type = $result->ToString();
+        $value = $result->ToString();
         $this->assertEmpty($value);
     }
 }
