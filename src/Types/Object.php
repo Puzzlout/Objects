@@ -38,7 +38,7 @@ class Object implements IObject, IString {
      */
     public static function InitWith($value) {
         $instance = $this->Init();
-        $instance->value = value;
+        $instance->value = $value;
         return $instance;
     }
 

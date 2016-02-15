@@ -39,12 +39,12 @@ class String extends Object implements IObjectInitialization, IObject, IString {
      * @throws \Exception
      */
     public static function InitWith($value) {
-        if (!$this->IsValid($value)) {
-            throw new \InvalidArgumentException('$value is not a String. See var_dump above' . var_dump($value), 0, NULL);
-        }
-
         $instance = new String();
         $instance->value = $value;
+        if (!$instance->IsValid()) {
+            throw new \InvalidArgumentException('$value is not a String. See var_dump.' . var_dump($value), 0, null);
+        }
+
         return $instance;
     }
 
@@ -52,7 +52,7 @@ class String extends Object implements IObjectInitialization, IObject, IString {
         if (is_string($this->value)) {
             return TRUE;
         }
-        throw new \InvalidArgumentException('Property $value is not a string', 0, NULL);
+        throw new \InvalidArgumentException('Property $value is not a string', 0, null);
     }
 
     /**
