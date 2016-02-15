@@ -27,5 +27,5 @@ interface IObject {
    * Method that validates the value is correct before assigning it to the Object 
    * value field.
    */
-  public function IsValid($value);
+  public function IsValid();
 }

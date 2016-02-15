@@ -20,49 +20,47 @@ use Puzzlout\Objects\Interfaces\IString;
 
 class String extends Object implements IObjectInitialization, IObject, IString {
 
-  public $value;
+    public $value;
 
-  /**
-   * Create a String object with an empty scarlar string
-   * 
-   * @return \Puzzlout\Objects\String
-   */
-  public static function Init() {
-    $instance = new String();
-    $instance->value = "";
-    return $instance;
-  }
-
-  /**
-   * Create a String object and assign the $value parameter to the instance scarlar string
-   * 
-   * @param string $value
-   * @return \Puzzlout\Objects\String
-   * @throws \Exception
-   */
-  public static function InitWith($value) {
-    if (!$this->IsValid($value)) {
-      throw new \InvalidArgumentException('$value is not a String. See var_dump above' . var_dump($value), 0, NULL);
+    /**
+     * Create an instance of the class and returns the object. 
+     * @return \Puzzlout\Objects\String
+     */
+    public static function Init() {
+        $instance = new String();
+        $instance->value = "";
+        return $instance;
     }
 
-    $instance = new String();
-    $instance->value = $value;
-    return $instance;
-  }
+    /**
+     * Create an instance of the class, sets the value property and returns the object.
+     * @param string $value
+     * @return \Puzzlout\Objects\String
+     * @throws \Exception
+     */
+    public static function InitWith($value) {
+        if (!$this->IsValid($value)) {
+            throw new \InvalidArgumentException('$value is not a String. See var_dump above' . var_dump($value), 0, NULL);
+        }
 
-  public function IsValid($value) {
-    if (is_string($value)) {
-      return TRUE;
+        $instance = new String();
+        $instance->value = $value;
+        return $instance;
     }
-    throw new \InvalidArgumentException('$value is not a string', 0, NULL);
-  }
 
-  /**
-   * 
-   * @return The value of the object as a string.
-   */
-  public function ToString() {
-    return $this->value;
-  }
+    public function IsValid() {
+        if (is_string($this->value)) {
+            return TRUE;
+        }
+        throw new \InvalidArgumentException('$value is not a string', 0, NULL);
+    }
+
+    /**
+     * 
+     * @return The value of the object as a string.
+     */
+    public function ToString() {
+        return $this->value;
+    }
 
 }
