@@ -9,9 +9,9 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false">
-    <testsuites>
-        <testsuite name="Puzzlout Scalar Objects">
-            <directory suffix=".php">./tests/</directory>
-        </testsuite>
-    </testsuites>
+  <testsuites>
+    <testsuite name="Puzzlout Scalar Objects">
+      <directory suffix=".php">./tests/</directory>
+    </testsuite>
+  </testsuites>
 </phpunit>

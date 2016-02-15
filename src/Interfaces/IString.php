@@ -14,8 +14,9 @@
 namespace Puzzlout\Objects\Interfaces;
 
 interface IString {
-  /**
-   * Method that retrieve the string value of the instance.
-   */
-  public function ToString();
+
+    /**
+     * Method that retrieve the string value of the instance.
+     */
+    public function ToString();
 }

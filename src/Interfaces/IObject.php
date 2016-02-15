@@ -14,18 +14,20 @@
 namespace Puzzlout\Objects\Interfaces;
 
 interface IObject {
-  /**
-   * Method that retrieve the instance type.
-   */
-  public function GetType();
-  /**
-   * Method that retrieve the instance class value.
-   */
-  public function GetClass();
 
-  /**
-   * Method that validates the value is correct before assigning it to the Object 
-   * value field.
-   */
-  public function IsValid();
+    /**
+     * Method that retrieve the instance type.
+     */
+    public function GetType();
+
+    /**
+     * Method that retrieve the instance class value.
+     */
+    public function GetClass();
+
+    /**
+     * Method that validates the value is correct before assigning it to the Object 
+     * value field.
+     */
+    public function IsValid();
 }

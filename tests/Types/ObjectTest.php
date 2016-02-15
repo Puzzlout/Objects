@@ -36,13 +36,15 @@ class ObjectTest extends \PHPUnit_Framework_TestCase {
         $type = $this->instance->GetType();
         $this->assertEquals("object", $type);
     }
+
     public function testGetClassReturn() {
         $class = $this->instance->GetClass();
         $this->assertEquals("Puzzlout\Objects\Types\Object", $class);
     }
-    
+
     public function testToStringMethodReturnEmptyValue() {
         $value = $this->instance->ToString();
         $this->assertEmpty($value);
     }
+
 }

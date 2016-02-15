@@ -1,25 +1,25 @@
 {
-    "name": "puzzlout/objects",
-    "description": "The Puzzleout Objects provides the core objects.",
-    "license": "MIT",
-    "keywords": ["Puzzlout", "web", "dev", "jl", "objects", "core"],
-    "authors": [
-        {
-            "name": "Jeremie Litzler",
-            "email": "puzzlout@jeremielitzler.net"
-        }
-    ],
-    "version": "1.0.0-alpha.1",
-    "require": {
-        "php": ">=5.4.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "4.8.*",
-        "puzzlout/framework-mvc": "dev-master"
-    },
-    "autoload": {
-        "psr-4": {
-            "Puzzlout\\Objects\\": "src"
-        }
+  "name": "puzzlout/objects",
+  "description": "The Puzzleout Objects provides the core objects.",
+  "license": "MIT",
+  "keywords": ["Puzzlout", "web", "dev", "jl", "objects", "core"],
+  "authors": [
+    {
+      "name": "Jeremie Litzler",
+      "email": "puzzlout@jeremielitzler.net"
     }
+  ],
+  "version": "1.0.0-alpha.1",
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.*",
+    "puzzlout/framework-mvc": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Puzzlout\\Objects\\": "src"
+    }
+  }
 }
