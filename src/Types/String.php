@@ -15,10 +15,11 @@
 namespace Puzzlout\Objects\Types;
 
 use Puzzlout\Objects\Interfaces\IObjectInitialization;
+use Puzzlout\Objects\Interfaces\IObjectBasicManipulation;
 use Puzzlout\Objects\Interfaces\IObject;
 use Puzzlout\Objects\Interfaces\IString;
 
-class String extends Object implements IObjectInitialization, IObject, IString {
+class String extends Object implements IObject, IObjectInitialization, IObjectBasicManipulation, IString {
 
     protected $value;
 
@@ -57,10 +58,27 @@ class String extends Object implements IObjectInitialization, IObject, IString {
 
     /**
      * 
-     * @return The value of the object as a string.
+     * @return string The value of the object as a string.
      */
     public function ToString() {
         return $this->value;
+    }
+
+    /**
+     * Gets the value of the instance of String class.
+     * @return string The value of the object
+     */
+    public function Get() {
+        return $this->ToString();
+    }
+
+    /**
+     * Sets the value of the instance of String class and verifies the input is valid. 
+     * @param string $value
+     */
+    public function Set($value) {
+        $this->value = $value;
+        $this->IsValid();
     }
 
 }

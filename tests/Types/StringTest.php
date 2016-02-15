@@ -39,6 +39,7 @@ class StringTest extends \PHPUnit_Framework_TestCase {
             $this->assertInstanceOf('\InvalidArgumentException', $ex);
         }
     }
+
     public function testIsValidMethodGivenNullExplicitReturnsException() {
         try {
             $obj = String::InitWith(null);
@@ -98,11 +99,42 @@ class StringTest extends \PHPUnit_Framework_TestCase {
         $value = $result->ToString();
         $this->assertEmpty($value);
     }
-    
+
     public function testInitMethodWithInput() {
         $result = String::InitWith("test");
         $value = $result->ToString();
         $this->assertNotEmpty($value);
         $this->assertEquals("test", $value);
     }
+
+    public function testGetMethodWithNoInput() {
+        $result = String::Init();
+        $value = $result->Get();
+        $this->assertEmpty($value);
+    }
+
+    public function testGetMethodWithInput() {
+        $result = String::InitWith("test");
+        $value = $result->Get();
+        $this->assertNotEmpty($value);
+        $this->assertEquals("test", $value);
+    }
+
+    public function testSetMethodWithNoInput() {
+        $result = String::Init();
+        $result->Set("test");
+        $value = $result->Get();
+        $this->assertNotEmpty($value);
+        $this->assertEquals("test", $value);
+    }
+
+    public function testSetMethodOverwriteValue() {
+        $result = String::InitWith("test");
+        $this->assertNotEmpty($result->Get());
+        $this->assertEquals("test", $result->Get());
+        $result->Set("test2");
+        $this->assertNotEquals("", $result->Get());
+        $this->assertEquals("test2", $result->Get());
+    }
+
 }
