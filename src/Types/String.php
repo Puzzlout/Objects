@@ -52,7 +52,7 @@ class String extends Object implements IObjectInitialization, IObject, IString {
         if (is_string($this->value)) {
             return TRUE;
         }
-        throw new \InvalidArgumentException('$value is not a string', 0, NULL);
+        throw new \InvalidArgumentException('Property $value is not a string', 0, NULL);
     }
 
     /**
