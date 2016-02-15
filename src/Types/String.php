@@ -20,7 +20,7 @@ use Puzzlout\Objects\Interfaces\IString;
 
 class String extends Object implements IObjectInitialization, IObject, IString {
 
-    public $value;
+    protected $value;
 
     /**
      * Create an instance of the class and returns the object. 

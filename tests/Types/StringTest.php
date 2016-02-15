@@ -31,9 +31,44 @@ class StringTest extends \PHPUnit_Framework_TestCase {
     }
 
     //Write the next tests below...
-    public function testIsValidMethodReturnsException() {
+    public function testIsValidMethodGivenNullImplicitReturnsException() {
         try {
             $obj = new String();
+            $result = $obj->IsValid();
+        } catch (\Exception $ex) {
+            $this->assertInstanceOf('\InvalidArgumentException', $ex);
+        }
+    }
+    public function testIsValidMethodGivenNullExplicitReturnsException() {
+        try {
+            $obj = String::InitWith(null);
+            $result = $obj->IsValid();
+        } catch (\Exception $ex) {
+            $this->assertInstanceOf('\InvalidArgumentException', $ex);
+        }
+    }
+
+    public function testIsValidMethodGivenArrayReturnsException() {
+        try {
+            $obj = String::InitWith([]);
+            $result = $obj->IsValid();
+        } catch (\Exception $ex) {
+            $this->assertInstanceOf('\InvalidArgumentException', $ex);
+        }
+    }
+
+    public function testIsValidMethodGivenIntegerReturnsException() {
+        try {
+            $obj = String::InitWith(0);
+            $result = $obj->IsValid();
+        } catch (\Exception $ex) {
+            $this->assertInstanceOf('\InvalidArgumentException', $ex);
+        }
+    }
+
+    public function testIsValidMethodGivenFloatReturnsException() {
+        try {
+            $obj = String::InitWith(0.0);
             $result = $obj->IsValid();
         } catch (\Exception $ex) {
             $this->assertInstanceOf('\InvalidArgumentException', $ex);
