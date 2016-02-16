@@ -51,7 +51,7 @@ class String extends Object implements IObject, IObjectInitialization, IObjectBa
 
     public function IsValid() {
         if (is_string($this->value)) {
-            return TRUE;
+            return true;
         }
         throw new \InvalidArgumentException('Property $value is not a string', 0, null);
     }
