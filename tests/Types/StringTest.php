@@ -22,12 +22,9 @@ class StringTest extends \PHPUnit_Framework_TestCase {
      * This method is generated.
      */
     public function testInstanceIsCorrect() {
-        $result = new String();
-        $this->assertInstanceOf('Puzzlout\Objects\Types\String', $result);
-        $result2 = String::Init();
-        $this->assertInstanceOf('Puzzlout\Objects\Types\String', $result);
-        $result3 = String::InitWith("test");
-        $this->assertInstanceOf('Puzzlout\Objects\Types\String', $result);
+        $this->assertInstanceOf('Puzzlout\Objects\Types\String', new String());
+        $this->assertInstanceOf('Puzzlout\Objects\Types\String', String::Init());
+        $this->assertInstanceOf('Puzzlout\Objects\Types\String', String::InitWith("test"));
     }
 
     //Write the next tests below...
@@ -42,8 +39,7 @@ class StringTest extends \PHPUnit_Framework_TestCase {
 
     public function testIsValidMethodGivenNullExplicitReturnsException() {
         try {
-            $obj = String::InitWith(null);
-            $result = $obj->IsValid();
+            $result = String::InitWith(null)->IsValid();
         } catch (\Exception $ex) {
             $this->assertInstanceOf('\InvalidArgumentException', $ex);
         }
@@ -51,8 +47,7 @@ class StringTest extends \PHPUnit_Framework_TestCase {
 
     public function testIsValidMethodGivenArrayReturnsException() {
         try {
-            $obj = String::InitWith([]);
-            $result = $obj->IsValid();
+            $result = String::InitWith([])->IsValid();
         } catch (\Exception $ex) {
             $this->assertInstanceOf('\InvalidArgumentException', $ex);
         }
@@ -60,8 +55,7 @@ class StringTest extends \PHPUnit_Framework_TestCase {
 
     public function testIsValidMethodGivenIntegerReturnsException() {
         try {
-            $obj = String::InitWith(0);
-            $result = $obj->IsValid();
+            $result = String::InitWith(0)->IsValid();
         } catch (\Exception $ex) {
             $this->assertInstanceOf('\InvalidArgumentException', $ex);
         }
@@ -69,8 +63,7 @@ class StringTest extends \PHPUnit_Framework_TestCase {
 
     public function testIsValidMethodGivenFloatReturnsException() {
         try {
-            $obj = String::InitWith(0.0);
-            $result = $obj->IsValid();
+            $result = String::InitWith(0.0)->IsValid();
         } catch (\Exception $ex) {
             $this->assertInstanceOf('\InvalidArgumentException', $ex);
         }
@@ -101,27 +94,24 @@ class StringTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testInitMethodWithInput() {
-        $result = String::InitWith("test");
-        $value = $result->ToString();
+        $value = String::InitWith("test")->ToString();
         $this->assertNotEmpty($value);
         $this->assertEquals("test", $value);
     }
 
     public function testGetMethodWithNoInput() {
-        $result = String::Init();
-        $value = $result->Get();
+        $value = String::Init()->Get();
         $this->assertEmpty($value);
     }
 
     public function testGetMethodWithInput() {
-        $result = String::InitWith("test");
-        $value = $result->Get();
+        $value = String::InitWith("test")->Get();
         $this->assertNotEmpty($value);
         $this->assertEquals("test", $value);
     }
 
     public function testSetMethodWithNoInput() {
-        $result = String::Init();
+        $result = new String();
         $result->Set("test");
         $value = $result->Get();
         $this->assertNotEmpty($value);
@@ -129,7 +119,8 @@ class StringTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetMethodOverwriteValue() {
-        $result = String::InitWith("test");
+        $result = new String();
+        $result->Set("test");
         $this->assertNotEmpty($result->Get());
         $this->assertEquals("test", $result->Get());
         $result->Set("test2");
