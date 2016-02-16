@@ -13,7 +13,7 @@
 
 namespace Puzzlout\Objects\Interfaces;
 
-use Puzzlout\Objects\Types\Boolean; 
+use Puzzlout\Objects\Types\Boolean;
 
 interface IBoolean {
 
@@ -21,5 +21,4 @@ interface IBoolean {
      * Get the value of the instance of a class.
      */
     public function Equals(Boolean $value);
-
 }

@@ -22,11 +22,11 @@ class Boolean extends Object implements IObject, IBoolean {
     public function GetClass() {
         parent::GetClass();
     }
-    
+
     public function GetType() {
         parent::GetType();
     }
-    
+
     /**
      * Validates the property value.
      * 
@@ -37,14 +37,12 @@ class Boolean extends Object implements IObject, IBoolean {
     public function IsValid() {
         if (!is_bool($this->value)) {
             throw new Exception(
-                    'The $value property of the instance of '.__CLASS__. ' is not a boolean.', 
-                    0, 
-                    null);
+            'The $value property of the instance of ' . __CLASS__ . ' is not a boolean.', 0, null);
         }
-        
+
         return true;
     }
-    
+
     /**
      * Compares if the current instance of Boolean class to another instance.
      * @param \Puzzlout\Objects\Types\Boolean $value
@@ -53,5 +51,5 @@ class Boolean extends Object implements IObject, IBoolean {
     public function Equals(Boolean $value) {
         return $this->value == $value;
     }
-    
+
 }
