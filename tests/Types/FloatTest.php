@@ -7,9 +7,9 @@
 
 namespace Puzzlout\Objects\Tests\Types;
 
-use Puzzlout\Objects\Types\Float;
+use Puzzlout\Objects\Types\Decimal;
 
-class FloatTest extends \PHPUnit_Framework_TestCase {
+class DecimalTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * Initialize the app object.
@@ -22,8 +22,8 @@ class FloatTest extends \PHPUnit_Framework_TestCase {
      * This method is generated.
      */
     public function testInstanceIsCorrect() {
-        $result = new Float();
-        $this->assertInstanceOf('Puzzlout\Objects\Types\Float', $result);
+        $result = new Decimal();
+        $this->assertInstanceOf('Puzzlout\Objects\Types\Decimal', $result);
     }
 
     //Write the next tests below...
