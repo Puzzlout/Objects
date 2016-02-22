@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Class String.
+ * Class StringExtended.
  * 
  * @author Jeremie Litzler
  * @copyright Copyright (c) 2015
  * @licence http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link https://github.com/Puzzlout/Objects
  * @since Version 1.0.0
- * @package String
+ * @package StringExtended
  * @see http://php.net/manual/en/language.types.intro.php
  */
 
@@ -19,16 +19,16 @@ use Puzzlout\Objects\Interfaces\IObjectBasicManipulation;
 use Puzzlout\Objects\Interfaces\IObject;
 use Puzzlout\Objects\Interfaces\IString;
 
-class String extends Object implements IObject, IObjectInitialization, IObjectBasicManipulation, IString {
+class StringExtended extends Object implements IObject, IObjectInitialization, IObjectBasicManipulation, IString {
 
     protected $value;
 
     /**
      * Create an instance of the class and returns the object. 
-     * @return \Puzzlout\Objects\String
+     * @return \Puzzlout\Objects\StringExtended
      */
     public static function Init() {
-        $instance = new String();
+        $instance = new StringExtended();
         $instance->value = "";
         return $instance;
     }
@@ -36,11 +36,11 @@ class String extends Object implements IObject, IObjectInitialization, IObjectBa
     /**
      * Create an instance of the class, sets the value property and returns the object.
      * @param string $value
-     * @return \Puzzlout\Objects\String
+     * @return \Puzzlout\Objects\StringExtended
      * @throws \Exception
      */
     public static function InitWith($value) {
-        $instance = new String();
+        $instance = new StringExtended();
         $instance->value = $value;
         if (!$instance->IsValid()) {
             throw new \InvalidArgumentException('$value is not a String. See var_dump.' . var_dump($value), 0, null);
