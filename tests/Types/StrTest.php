@@ -7,9 +7,9 @@
 
 namespace Puzzlout\Objects\Tests\Types;
 
-use Puzzlout\Objects\Types\StringExtended;
+use Puzzlout\Objects\Types\Str;
 
-class StringExtendedTest extends \PHPUnit_Framework_TestCase {
+class StrTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * Initialize the app object.
@@ -22,15 +22,15 @@ class StringExtendedTest extends \PHPUnit_Framework_TestCase {
      * This method is generated.
      */
     public function testInstanceIsCorrect() {
-        $this->assertInstanceOf('Puzzlout\Objects\Types\StringExtended', new StringExtended());
-        $this->assertInstanceOf('Puzzlout\Objects\Types\StringExtended', StringExtended::Init());
-        $this->assertInstanceOf('Puzzlout\Objects\Types\StringExtended', StringExtended::InitWith("test"));
+        $this->assertInstanceOf('Puzzlout\Objects\Types\Str', new Str());
+        $this->assertInstanceOf('Puzzlout\Objects\Types\Str', Str::Init());
+        $this->assertInstanceOf('Puzzlout\Objects\Types\Str', Str::InitWith("test"));
     }
 
     //Write the next tests below...
     public function testIsValidMethodGivenNullImplicitReturnsException() {
         try {
-            $obj = new StringExtended();
+            $obj = new Str();
             $result = $obj->IsValid();
         } catch (\Exception $ex) {
             $this->assertInstanceOf('\InvalidArgumentException', $ex);
@@ -39,7 +39,7 @@ class StringExtendedTest extends \PHPUnit_Framework_TestCase {
 
     public function testIsValidMethodGivenNullExplicitReturnsException() {
         try {
-            $result = StringExtended::InitWith(null)->IsValid();
+            $result = Str::InitWith(null)->IsValid();
         } catch (\Exception $ex) {
             $this->assertInstanceOf('\InvalidArgumentException', $ex);
         }
@@ -47,7 +47,7 @@ class StringExtendedTest extends \PHPUnit_Framework_TestCase {
 
     public function testIsValidMethodGivenArrayReturnsException() {
         try {
-            $result = StringExtended::InitWith([])->IsValid();
+            $result = Str::InitWith([])->IsValid();
         } catch (\Exception $ex) {
             $this->assertInstanceOf('\InvalidArgumentException', $ex);
         }
@@ -55,7 +55,7 @@ class StringExtendedTest extends \PHPUnit_Framework_TestCase {
 
     public function testIsValidMethodGivenIntegerReturnsException() {
         try {
-            $result = StringExtended::InitWith(0)->IsValid();
+            $result = Str::InitWith(0)->IsValid();
         } catch (\Exception $ex) {
             $this->assertInstanceOf('\InvalidArgumentException', $ex);
         }
@@ -63,54 +63,54 @@ class StringExtendedTest extends \PHPUnit_Framework_TestCase {
 
     public function testIsValidMethodGivenFloatReturnsException() {
         try {
-            $result = StringExtended::InitWith(0.0)->IsValid();
+            $result = Str::InitWith(0.0)->IsValid();
         } catch (\Exception $ex) {
             $this->assertInstanceOf('\InvalidArgumentException', $ex);
         }
     }
 
     public function testGetTypeReturnsObject() {
-        $result = new StringExtended();
+        $result = new Str();
         $type = $result->GetType();
         $this->assertEquals("object", $type);
     }
 
     public function testGetClassReturn() {
-        $result = new StringExtended();
+        $result = new Str();
         $class = $result->GetClass();
         $this->assertEquals("Puzzlout\Objects\Types\Object", $class);
     }
 
     public function testToStringMethodReturnEmptyValue() {
-        $result = new StringExtended();
+        $result = new Str();
         $value = $result->ToString();
         $this->assertEmpty($value);
     }
 
     public function testInitMethodWithNoInput() {
-        $value = StringExtended::Init()->ToString();
+        $value = Str::Init()->ToString();
         $this->assertEmpty($value);
     }
 
     public function testInitMethodWithInput() {
-        $value = StringExtended::InitWith("test")->ToString();
+        $value = Str::InitWith("test")->ToString();
         $this->assertNotEmpty($value);
         $this->assertEquals("test", $value);
     }
 
     public function testGetMethodWithNoInput() {
-        $value = StringExtended::Init()->Get();
+        $value = Str::Init()->Get();
         $this->assertEmpty($value);
     }
 
     public function testGetMethodWithInput() {
-        $value = StringExtended::InitWith("test")->Get();
+        $value = Str::InitWith("test")->Get();
         $this->assertNotEmpty($value);
         $this->assertEquals("test", $value);
     }
 
     public function testSetMethodWithNoInput() {
-        $result = new StringExtended();
+        $result = new Str();
         $result->Set("test");
         $value = $result->Get();
         $this->assertNotEmpty($value);
@@ -118,7 +118,7 @@ class StringExtendedTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetMethodOverwriteValue() {
-        $result = new StringExtended();
+        $result = new Str();
         $result->Set("test");
         $this->assertNotEmpty($result->Get());
         $this->assertEquals("test", $result->Get());
