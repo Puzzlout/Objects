@@ -11,7 +11,7 @@
     ],
     "version": "1.0.2",
     "require": {
-        "php": ">=5.5.*",
+        "php": ">=5.4.0",
         "puzzlout/exceptions": "1.*"
     },
     "require-dev": {

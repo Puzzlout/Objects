@@ -1,5 +1,8 @@
 # Changelog
 
+v1.0.3:
+    - fixing the require php in composer.json
+
 v1.0.2:
     - Packagist didn't trigger
 
