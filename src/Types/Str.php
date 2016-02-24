@@ -14,6 +14,8 @@
 
 namespace Puzzlout\Objects\Types;
 
+use Puzzlout\Exceptions\Classes\Core\InvalidArgumentException;
+use Puzzlout\Exceptions\Codes;
 use Puzzlout\Objects\Interfaces\IObjectInitialization;
 use Puzzlout\Objects\Interfaces\IObjectBasicManipulation;
 use Puzzlout\Objects\Interfaces\IObject;
@@ -42,18 +44,16 @@ class Str extends Object implements IObject, IObjectInitialization, IObjectBasic
     public static function InitWith($value) {
         $instance = new Str();
         $instance->value = $value;
-        if (!$instance->IsValid()) {
-            throw new \InvalidArgumentException('$value is not a String. See var_dump.' . var_dump($value), 0, null);
-        }
-
+        $instance->IsValid();
         return $instance;
     }
 
     public function IsValid() {
-        if (is_string($this->value)) {
-            return true;
+        if (!is_string($this->value)) {
+            throw new InvalidArgumentException(
+            'Property $value is not a string', Codes\GeneralErrors::VALUE_IS_NOT_OF_EXPECTED_TYPE, null);
         }
-        throw new \InvalidArgumentException('Property $value is not a string', 0, null);
+        return true;
     }
 
     /**

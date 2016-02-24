@@ -36,8 +36,10 @@ class Boolean extends Object implements IObject, IBoolean {
      */
     public function IsValid() {
         if (!is_bool($this->value)) {
-            throw new Exception(
-            'The $value property of the instance of ' . __CLASS__ . ' is not a boolean.', 0, null);
+            throw new InvalidArgumentException(
+            'The $value property of the instance of ' . __CLASS__ . ' is not a boolean.', 
+                    Codes\GeneralErrors::VALUE_IS_NOT_OF_EXPECTED_TYPE, 
+                    null);
         }
 
         return true;
