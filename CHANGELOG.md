@@ -1,5 +1,8 @@
 # Changelog
 
+v1.0.2:
+    - Packagist didn't trigger
+
 v1.0.1: 
     - Using the package puzzlout/exceptions now.
 
