@@ -1,5 +1,8 @@
 # Changelog
 
+v1.0.4.38:
+    - code style fixes from build 37
+
 v1.0.4:
     - issue #2
 
