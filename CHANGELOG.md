@@ -1,5 +1,8 @@
 # Changelog
 
+v1.0.4:
+    - issue #2
+
 v1.0.3:
     - fixing the require php in composer.json
 
