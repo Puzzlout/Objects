@@ -16,7 +16,7 @@ namespace Puzzlout\Objects\Types;
 
 abstract class BaseEnum {
 
-    private static $constCacheArray = NULL;
+    private static $constCacheArray = null;
 
     private function __construct() {
         /*
@@ -25,7 +25,7 @@ abstract class BaseEnum {
     }
 
     private static function getConstants() {
-        if (self::$constCacheArray == NULL) {
+        if (self::$constCacheArray == null) {
             self::$constCacheArray = [];
         }
         $calledClass = get_called_class();
@@ -49,7 +49,7 @@ abstract class BaseEnum {
 
     public static function isValidValue($value) {
         $values = array_values(self::getConstants());
-        return in_array($value, $values, $strict = true);
+        return in_array($value, $values, true);
     }
 
 }
