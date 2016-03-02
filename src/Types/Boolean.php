@@ -14,6 +14,8 @@
 
 namespace Puzzlout\Objects\Types;
 
+use Puzzlout\Exceptions\Classes\Core\InvalidArgumentException;
+use Puzzlout\Exceptions\Codes\GeneralErrors;
 use Puzzlout\Objects\Interfaces\IObject;
 use Puzzlout\Objects\Interfaces\IBoolean;
 
@@ -31,13 +33,12 @@ class Boolean extends Object implements IObject, IBoolean {
      * Validates the property value.
      * 
      * @return boolean The result
-     * @throws Exception 
-     * @todo Create an error code.
+     * @throws InvalidArgumentException 
      */
     public function IsValid() {
         if (!is_bool($this->value)) {
-            throw new InvalidArgumentException(
-            'The $value property of the instance of ' . __CLASS__ . ' is not a boolean.', Codes\GeneralErrors::VALUE_IS_NOT_OF_EXPECTED_TYPE, null);
+            $errorMsg = 'The $value property of the instance of ' . __CLASS__ . ' is not a boolean.';
+            throw new InvalidArgumentException($errorMsg, Codes\GeneralErrors::VALUE_IS_NOT_OF_EXPECTED_TYPE, null);
         }
 
         return true;
