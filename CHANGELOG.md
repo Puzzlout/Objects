@@ -1,5 +1,8 @@
 # Changelog
 
+1.0.6
+    - See commit cfd8914
+    
 1.0.5.41
     - See commit 5d2be870779d267a1e5e1309b4d0b4af58a0c031
 
