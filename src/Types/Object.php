@@ -22,26 +22,6 @@ class Object implements IObject, IString {
     protected $value;
 
     /**
-     * Create an instance of the class and returns the object.
-     * @return \Puzzlout\Objects\Types\Object
-     */
-    public static function Init() {
-        $instance = new Object();
-        return $instance;
-    }
-
-    /**
-     * Create an instance of the class, sets the value property and returns the object.
-     * @param mixed $value Can be all the types found here: http://php.net/manual/en/language.types.intro.php
-     * @return \Puzzlout\Objects\Types\Object
-     */
-    public static function InitWith($value) {
-        $instance = $this->Init();
-        $instance->value = $value;
-        return $instance;
-    }
-
-    /**
      * 
      * @param type $value
      * @return boolean The result
